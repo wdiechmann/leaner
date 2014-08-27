@@ -2,7 +2,7 @@
   <%= link_to user.email, user %>
 </td>
 <td>
-  <%= form_for(user) do |f| %>
+  <%= simple_form_for( user, html: {class: 'form-horizontal' }) do |f| %>
     <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
     <%= f.submit 'Change Role', :class => 'button-xs' %>
   <% end %>
