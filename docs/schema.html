@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>schema.rb</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="application.html">
+                application.rb
+              </a>
+            
+              
+              <a class="source" href="boot.html">
+                boot.rb
+              </a>
+            
+              
+              <a class="source" href="deploy.html">
+                deploy.rb
+              </a>
+            
+              
+              <a class="source" href="environment.html">
+                environment.rb
+              </a>
+            
+              
+              <a class="source" href="routes.html">
+                routes.rb
+              </a>
+            
+              
+              <a class="source" href="schema.html">
+                schema.rb
+              </a>
+            
+              
+              <a class="source" href="seeds.html">
+                seeds.rb
+              </a>
+            
+              
+              <a class="source" href="rails_helper.html">
+                rails_helper.rb
+              </a>
+            
+              
+              <a class="source" href="spec_helper.html">
+                spec_helper.rb
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>schema.rb</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>encoding: UTF-8
+This file is auto-generated from the current state of the database. Instead
+of editing this file, please use the migrations feature of Active Record to
+incrementally modify your database, and then regenerate this schema definition.</p>
+<p>Note that this schema.rb definition is the authoritative source for your
+database schema. If you need to create the application database on another
+system, you should be using db:schema:load, not running all the migrations
+from scratch. The latter is a flawed and unsustainable approach (the more migrations
+you’ll amass, the slower it’ll run and the greater likelihood for issues).</p>
+<p>It’s strongly recommended that you check this file into your version control system.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-constant">ActiveRecord::Schema</span>.define(<span class="hljs-symbol">version:</span> <span class="hljs-number">20140827142534</span>) <span class="hljs-keyword">do</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>These are extensions that must be enabled in order to support this database</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  enable_extension <span class="hljs-string">"plpgsql"</span>
+
+  create_table <span class="hljs-string">"users"</span>, <span class="hljs-symbol">force:</span> <span class="hljs-keyword">true</span> <span class="hljs-keyword">do</span> |t|
+    t.string   <span class="hljs-string">"email"</span>,                  <span class="hljs-symbol">default:</span> <span class="hljs-string">""</span>, <span class="hljs-symbol">null:</span> <span class="hljs-keyword">false</span>
+    t.string   <span class="hljs-string">"encrypted_password"</span>,     <span class="hljs-symbol">default:</span> <span class="hljs-string">""</span>
+    t.string   <span class="hljs-string">"reset_password_token"</span>
+    t.datetime <span class="hljs-string">"reset_password_sent_at"</span>
+    t.datetime <span class="hljs-string">"remember_created_at"</span>
+    t.integer  <span class="hljs-string">"sign_in_count"</span>,          <span class="hljs-symbol">default:</span> <span class="hljs-number">0</span>,  <span class="hljs-symbol">null:</span> <span class="hljs-keyword">false</span>
+    t.datetime <span class="hljs-string">"current_sign_in_at"</span>
+    t.datetime <span class="hljs-string">"last_sign_in_at"</span>
+    t.inet     <span class="hljs-string">"current_sign_in_ip"</span>
+    t.inet     <span class="hljs-string">"last_sign_in_ip"</span>
+    t.datetime <span class="hljs-string">"created_at"</span>
+    t.datetime <span class="hljs-string">"updated_at"</span>
+    t.string   <span class="hljs-string">"name"</span>
+    t.string   <span class="hljs-string">"confirmation_token"</span>
+    t.datetime <span class="hljs-string">"confirmed_at"</span>
+    t.datetime <span class="hljs-string">"confirmation_sent_at"</span>
+    t.string   <span class="hljs-string">"unconfirmed_email"</span>
+    t.integer  <span class="hljs-string">"role"</span>
+    t.string   <span class="hljs-string">"invitation_token"</span>
+    t.datetime <span class="hljs-string">"invitation_created_at"</span>
+    t.datetime <span class="hljs-string">"invitation_sent_at"</span>
+    t.datetime <span class="hljs-string">"invitation_accepted_at"</span>
+    t.integer  <span class="hljs-string">"invitation_limit"</span>
+    t.integer  <span class="hljs-string">"invited_by_id"</span>
+    t.string   <span class="hljs-string">"invited_by_type"</span>
+    t.integer  <span class="hljs-string">"invitations_count"</span>,      <span class="hljs-symbol">default:</span> <span class="hljs-number">0</span>
+  <span class="hljs-keyword">end</span>
+
+  add_index <span class="hljs-string">"users"</span>, [<span class="hljs-string">"email"</span>], <span class="hljs-symbol">name:</span> <span class="hljs-string">"index_users_on_email"</span>, <span class="hljs-symbol">unique:</span> <span class="hljs-keyword">true</span>, <span class="hljs-symbol">using:</span> <span class="hljs-symbol">:btree</span>
+  add_index <span class="hljs-string">"users"</span>, [<span class="hljs-string">"invitation_token"</span>], <span class="hljs-symbol">name:</span> <span class="hljs-string">"index_users_on_invitation_token"</span>, <span class="hljs-symbol">unique:</span> <span class="hljs-keyword">true</span>, <span class="hljs-symbol">using:</span> <span class="hljs-symbol">:btree</span>
+  add_index <span class="hljs-string">"users"</span>, [<span class="hljs-string">"invitations_count"</span>], <span class="hljs-symbol">name:</span> <span class="hljs-string">"index_users_on_invitations_count"</span>, <span class="hljs-symbol">using:</span> <span class="hljs-symbol">:btree</span>
+  add_index <span class="hljs-string">"users"</span>, [<span class="hljs-string">"invited_by_id"</span>], <span class="hljs-symbol">name:</span> <span class="hljs-string">"index_users_on_invited_by_id"</span>, <span class="hljs-symbol">using:</span> <span class="hljs-symbol">:btree</span>
+  add_index <span class="hljs-string">"users"</span>, [<span class="hljs-string">"reset_password_token"</span>], <span class="hljs-symbol">name:</span> <span class="hljs-string">"index_users_on_reset_password_token"</span>, <span class="hljs-symbol">unique:</span> <span class="hljs-keyword">true</span>, <span class="hljs-symbol">using:</span> <span class="hljs-symbol">:btree</span>
+
+<span class="hljs-keyword">end</span></pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
